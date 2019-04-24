@@ -22,12 +22,6 @@ private:
     }
 
 public:
-    /*
-     * To get a value from an interval of an index [s, e], the function should be invertible.
-     * For example, adding and multiplying are invertible as subtracting and dividing.
-     * The inverse calculation such as division should be done by the programmer.
-     * Non-invertible functions are allowed ONLY if you get the result of interval which index starts from 1.
-     */
     template <typename DataIterator>
     BIT(std::size_t size, std::function<T(T, T)> func, DataIterator dit)
             : _size(size), _binFunc(func), _data(new T[size + 1]()), _tree(new T[size + 1]()) {
